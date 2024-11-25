@@ -31,10 +31,11 @@
                                     <div class="pb-3">
                                         <a href="index.html">
                                             <span class="logo-lg">
-                                                <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Vuesy</span>
+                                                <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">QR </span>
                                             </span>
                                         </a>
-                                        <p class="text-muted font-size-15 w-75 mx-auto mt-3 mb-0">User Experience & Interface Design Strategy Saas Solution</p>
+                                        <p class="text-muted font-size-15 w-75 mx-auto mt-3 mb-0">
+                                            Guarda tus mejores experiencias y recuerdos en QR</p>
                                     </div>
                                 </div>
 
@@ -45,7 +46,7 @@
                                 </div>
 
                                 <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Vuesy. Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">Themesdesign</a></p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Derechos reservados.  <a href="#" target="_blank">QR</a></p>
                                 </div>
                             </div>
 
@@ -63,44 +64,45 @@
                                         <div class="card-body">
                                             <div class="px-3 py-3">
                                                 <div class="text-center">
-                                                    <h5 class="mb-0">Welcome Back !</h5>
-                                                    <p class="text-muted mt-2">Sign in to continue to Vuesy.</p>
+                                                    <h5 class="mb-0">¡Bienvenido!</h5>
+                                                    <p class="text-muted mt-2">Inicie sesión para continuar con QR.</p>
                                                 </div>
-                                                <form class="mt-4 pt-2">
+                                                <form class="mt-4 pt-2" accept="" method="POST" action="{{ route('session') }}">
+                                                    @csrf
                                                     <div class="form-floating form-floating-custom mb-3">
-                                                        <input type="text" class="form-control" id="input-username" placeholder="Enter User Name">
-                                                        <label for="input-username">Username</label>
+                                                        <input type="email" class="form-control" id="input-username" placeholder="Enter User Name" name="email">
+                                                        <label for="input-username">Email</label>
                                                         <div class="form-floating-icon">
                                                             <i class="uil uil-users-alt"></i>
                                                         </div>
                                                     </div>
                                                     <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
-                                                        <input type="password" class="form-control" id="password-input" placeholder="Enter Password">
+                                                        <input type="password" class="form-control" id="password-input" placeholder="Enter Password" name="password">
                                                         <button type="button" class="btn btn-link position-absolute h-100 end-0 top-0" id="password-addon">
                                                             <i class="mdi mdi-eye-outline font-size-18 text-muted"></i>
                                                         </button>
-                                                        <label for="password-input">Password</label>
+                                                        <label for="password-input">Contraseña</label>
                                                         <div class="form-floating-icon">
                                                             <i class="uil uil-padlock"></i>
                                                         </div>
                                                     </div>
                                                     <div class="form-check form-check-primary font-size-16 py-1">
-                                                        <input class="form-check-input" type="checkbox" id="remember-check">
+                                                        <input class="form-check-input" type="checkbox" id="remember-check" name="remember">
                                                         <div class="float-end">
-                                                            <a href="auth-resetpassword-basic.html" class="text-muted text-decoration-underline font-size-14">Forgot your password?</a>
+                                                            <a href="auth-resetpassword-basic.html" class="text-muted text-decoration-underline font-size-14">¿Olvidaste tu contraseña?</a>
                                                         </div>
                                                         <label class="form-check-label font-size-14" for="remember-check">
-                                                            Remember me
+                                                            Recuérdame
                                                         </label>
                                                     </div>
 
                                                     <div class="mt-3">
-                                                        <button class="btn btn-primary w-100" type="submit">Log In</button>
+                                                        <button class="btn btn-primary w-100" type="submit">Ingresar</button>
                                                     </div>
 
                                                     <div class="mt-4 text-center">
                                                         <div class="signin-other-title">
-                                                            <h5 class="font-size-15 mb-4 text-muted fw-medium">- Or you can join with -</h5>
+                                                            <h5 class="font-size-15 mb-4 text-muted fw-medium">- O puedes unirte con -</h5>
                                                         </div>
 
                                                         <div class="d-flex gap-2">
@@ -116,9 +118,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mt-4 pt-3 text-center">
+                                                    {{-- <div class="mt-4 pt-3 text-center">
                                                         <p class="text-muted mb-0">Don't have an account ? <a href="auth-signup-cover.html" class="fw-semibold text-decoration-underline"> Signup Now </a> </p>
-                                                    </div>
+                                                    </div> --}}
 
                                                 </form><!-- end form -->
                                             </div>

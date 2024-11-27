@@ -23,7 +23,7 @@
         <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-
+        @yield('css')
     </head>
 
     <body data-topbar="dark">
@@ -179,12 +179,15 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
+    <script>
+        let asset = '{{ asset('') }}'
+    </script>
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/libs/metismenujs/metismenujs.min.js') }}"></script>
     <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('assets/libs/feather-icons/feather.min.js') }}"></script>
 
-    <!-- apexcharts -->
+    {{-- <!-- apexcharts -->
     <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
     <!-- Vector map-->
@@ -194,10 +197,12 @@
     <!-- swiper js -->
     <script src="{{ asset('assets/libs/swiper/swiper-bundle.min.js') }}"></script>
 
-    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script> --}}
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    @routes
 
+    @yield('js')
     </body>
 
 </html>

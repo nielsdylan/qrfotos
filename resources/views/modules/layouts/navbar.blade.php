@@ -56,7 +56,7 @@
                    </a>
                </li>
                <li>
-                <a href="apps-calendar.html">
+                <a href="{{ route('galeria.lista') }}">
                     <i class="bx bx-calendar-alt nav-icon"></i>
                     <span class="menu-item" data-key="t-calendar">Galeria</span>
                 </a>

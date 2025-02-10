@@ -24,5 +24,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::name('galeria.')->prefix('galeria')->group(function () {
         Route::get('nuevo', [GalleryController::class, 'nuevo'])->name('nuevo');
+        Route::post('guardar-fotos', [GalleryController::class, 'guardarFotos'])->name('guardar-fotos');
+        Route::put('eliminar-fotos', [GalleryController::class, 'eliminarFotos'])->name('eliminar-fotos');
+        Route::get('lista', [GalleryController::class, 'lista'])->name('lista');
     });
 });

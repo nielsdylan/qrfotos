@@ -11,12 +11,13 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
-        <!-- plugin css -->
+        {{-- <!-- plugin css -->
         <link href="{{ asset('assets/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- swiper css -->
-        <link rel="stylesheet" href="{{ asset('assets/libs/swiper/swiper-bundle.min.css') }}">
-
+        <link rel="stylesheet" href="{{ asset('assets/libs/swiper/swiper-bundle.min.css') }}"> --}}
+        <!-- Sweet Alert-->
+        <link href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- Bootstrap Css -->
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -24,6 +25,7 @@
         <!-- App Css-->
         <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
         @yield('css')
+
     </head>
 
     <body data-topbar="dark">
@@ -180,7 +182,8 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        let asset = '{{ asset('') }}'
+        const token = '{{csrf_token()}}';
+        let asset = '{{ asset('') }}';
     </script>
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/libs/metismenujs/metismenujs.min.js') }}"></script>
@@ -199,7 +202,14 @@
 
     <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script> --}}
 
+    <!-- Sweet Alerts js -->
+    <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+
+    <!-- Sweet alert init js-->
+    {{-- <script src="{{ asset('assets/js/pages/sweet-alerts.init.js') }}"></script> --}}
+
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/libs/jquery/jquery-3.7.1.min.js') }}"></script>
     @routes
 
     @yield('js')

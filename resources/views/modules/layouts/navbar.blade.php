@@ -49,19 +49,27 @@
 
                <li class="menu-title" data-key="t-applications">Applications</li>
 
-               <li>
+                <li>
                    <a href="{{ route('galeria.nuevo') }}">
                        <i class="bx bx-calendar-alt nav-icon"></i>
                        <span class="menu-item" data-key="t-calendar">Nuevo recuerdo</span>
                    </a>
-               </li>
-               <li>
-                <a href="{{ route('galeria.lista') }}">
-                    <i class="bx bx-calendar-alt nav-icon"></i>
-                    <span class="menu-item" data-key="t-calendar">Galeria</span>
-                </a>
-            </li>
+                </li>
+                <li>
+                    <a href="{{ route('galeria.lista') }}">
+                        <i class="bx bx-calendar-alt nav-icon"></i>
+                        <span class="menu-item" data-key="t-calendar">Galeria</span>
+                    </a>
+                </li>
 
+                <li class="menu-title" data-key="t-applications">Administrador</li>
+
+                <li>
+                    <a href="{{ route('administrador.clientes.lista') }}">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span class="menu-item" data-key="t-usuario">Usuarios</span>
+                    </a>
+                </li>
 
 
            </ul>

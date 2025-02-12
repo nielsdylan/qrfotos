@@ -10,12 +10,6 @@
         <meta content="fotos" name="QR Technology" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-
-        {{-- <!-- plugin css -->
-        <link href="{{ asset('assets/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css" />
-
-        <!-- swiper css -->
-        <link rel="stylesheet" href="{{ asset('assets/libs/swiper/swiper-bundle.min.css') }}"> --}}
         <!-- Sweet Alert-->
         <link href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- Bootstrap Css -->
@@ -190,23 +184,11 @@
     <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('assets/libs/feather-icons/feather.min.js') }}"></script>
 
-    {{-- <!-- apexcharts -->
-    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
-    <!-- Vector map-->
-    <script src="{{ asset('assets/libs/jsvectormap/js/jsvectormap.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/jsvectormap/maps/world-merc.js') }}"></script>
-
-    <!-- swiper js -->
-    <script src="{{ asset('assets/libs/swiper/swiper-bundle.min.js') }}"></script>
-
-    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script> --}}
 
     <!-- Sweet Alerts js -->
     <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
     <!-- Sweet alert init js-->
-    {{-- <script src="{{ asset('assets/js/pages/sweet-alerts.init.js') }}"></script> --}}
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/libs/jquery/jquery-3.7.1.min.js') }}"></script>

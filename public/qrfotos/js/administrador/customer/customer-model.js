@@ -4,17 +4,27 @@ class CustomerModel {
         this.token = token;
     }
 
-    guardarFotos = (data) =>{
+    guardar = (data) =>{
         return $.ajax({
-            url: route('galeria.guardar-fotos'),
+            url: route('administrador.clientes.guardar'),
             type: 'POST',
             dataType: "JSON",
-            processData: false,
-            contentType: false,
+            // processData: false,
+            // contentType: false,
             data: data
         });
     }
-    eliminarFoto = (id) =>{
+    editar = (data) =>{
+        return $.ajax({
+            url: route('administrador.clientes.guardar'),
+            type: 'POST',
+            dataType: "JSON",
+            // processData: false,
+            // contentType: false,
+            data: data
+        });
+    }
+    eliminar = (id) =>{
         return $.ajax({
             url: route('galeria.eliminar-fotos'),
             type: 'PUT',

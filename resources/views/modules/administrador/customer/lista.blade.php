@@ -18,14 +18,14 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
-                                        <table id="tabla-data" class="table" style="font-size: 12px; width: 100%">
+                                        <table id="tabla-data" class="table table-nowrap table-hover mb-1">
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
                                                     <th class="text-center">N° Documento</th>
                                                     <th class="text-center">Nombres y Apelidos</th>
                                                     <th class="text-center">Email</th>
-                                                    <th class="text-center">Telefono</th>
+                                                    {{-- <th class="text-center">Telefono</th> --}}
                                                     <th class="text-center">Estado</th>
                                                     <th class="text-center"> - </th>
                                                 </tr>
@@ -57,7 +57,8 @@
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
     <div class="modal fade" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true" id="modal-cliente">
         <div class="modal-dialog modal-dialog-scrollable " role="document" >
-            <form action="">
+            <form action="" id="form-cliente">
+                @csrf
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalTitleId">
@@ -78,7 +79,7 @@
                                     <input
                                         type="text"
                                         name="numero_documento"
-                                        id=""
+
                                         class="form-control form-control-sm"
                                         placeholder=""
                                         aria-describedby="helpId"
@@ -95,7 +96,7 @@
                                     <input
                                         type="text"
                                         name="apellidos"
-                                        id=""
+
                                         class="form-control form-control-sm"
                                         placeholder=""
                                         aria-describedby="helpId"
@@ -112,7 +113,7 @@
                                     <input
                                         type="text"
                                         name="nombres"
-                                        id=""
+
                                         class="form-control form-control-sm"
                                         placeholder=""
                                         aria-describedby="helpId"
@@ -129,7 +130,43 @@
                                     <input
                                         type="email"
                                         name="email"
-                                        id=""
+
+                                        class="form-control form-control-sm"
+                                        placeholder=""
+                                        aria-describedby="helpId"
+                                        required
+                                    />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Contraseña</label>
+                                    <input
+                                        type="password"
+                                        name="password"
+
+                                        class="form-control form-control-sm"
+                                        placeholder=""
+                                        aria-describedby="helpId"
+                                        required
+                                    />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Repita su contraseña</label>
+                                    <input
+                                        type="password"
+                                        name="rep_password"
+
                                         class="form-control form-control-sm"
                                         placeholder=""
                                         aria-describedby="helpId"
@@ -173,5 +210,6 @@
     const view = new CustomerView(new CustomerModel(token));
     // // view.listar(buscar);
     view.listar();
+    view.eventos();
 </script>
 @endsection

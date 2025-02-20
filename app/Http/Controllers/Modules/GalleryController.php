@@ -51,7 +51,7 @@ class GalleryController extends Controller
         return response()->json(["title"=>"Alerta","message"=>"Ingrese por lo menos una imagen", "type"=>"warning"],200);
     }
     public function lista(){
-        $images = Image::paginate(15);
+        $images = Image::where('user_id',Auth::user()->id)->paginate(15);
         // return response()->json($images);
         return view('modules.gallery.lista', get_defined_vars());
     }

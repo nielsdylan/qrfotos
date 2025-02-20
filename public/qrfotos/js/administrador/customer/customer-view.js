@@ -12,7 +12,7 @@ class CustomerView {
             responsive: true,
             pageLength: 50,
             language: {
-                url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                url: "https://cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json"
             },
             serverSide: true,
             processing: true,
@@ -25,6 +25,8 @@ class CustomerView {
                     action: () => {
                         // vistaCrear();
                         $('#modal-cliente').modal('show');
+                        $("#form-cliente")[0].reset();
+                        $("#form-cliente").find('h5.modal-title').text('Nuevo Cliente');
                     },
                     init: function(api, node, config) {
 
@@ -84,7 +86,7 @@ class CustomerView {
                 {data: 'nombres', className: 'text-center'},
                 {data: 'apellidos', className: 'text-center'},
                 {data: 'email', className: 'text-center'},
-                {data: 'telefono', className: 'text-center'},
+                // {data: 'telefono', className: 'text-center'},
                 {data: 'estado', className: 'text-center'},
                 {data: 'accion', className: 'text-center'},
             ]
@@ -108,6 +110,36 @@ class CustomerView {
     }
 
     eventos = () => {
+        $('#form-cliente').submit((e) => {
+            e.preventDefault();
+            let data = $(e.currentTarget).serialize();
+            let password = $('[name="password"]').val();
+            let re_password = $('[name="rep_password"]').val();
+            if(password == re_password){
+                this.model.guardar(data).then((respuesta) => {
+                    console.log(respuesta);
 
+                }).always(() => {
+
+                }).fail(() => {
+
+                });
+
+            }else{
+                console.log('fals');
+            }
+        });
+        $('.editar').click((e) => {
+            e.preventDefault();
+            let id = $(e.currentTarget).attr('data-id');
+            this.model.editar(id).then((respuesta) => {
+                console.log(respuesta);
+
+            }).always(() => {
+
+            }).fail(() => {
+
+            });
+        });
     }
 }

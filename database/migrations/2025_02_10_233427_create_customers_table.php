@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('email');
-            $table->integer('telefono');
+            $table->integer('telefono')->nullable();
+            $table->integer('user_id');
             $table->integer('estado')->default(1);
             $table->timestamps();
             $table->softDeletes();

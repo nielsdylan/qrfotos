@@ -35,13 +35,7 @@
                <li class="menu-title" data-key="t-menu">Menu</li>
 
                <li>
-                   <a href="index.html">
-                       <i class="bx bx-home-circle nav-icon"></i>
-                       <span class="menu-item" data-key="t-dashboard">Dashboard</span>
-                   </a>
-               </li>
-               <li>
-                   <a href="index.html">
+                   <a href="{{ route('home') }}">
                        <i class="bx bx-home-circle nav-icon"></i>
                        <span class="menu-item" data-key="t-dashboard">Home</span>
                    </a>

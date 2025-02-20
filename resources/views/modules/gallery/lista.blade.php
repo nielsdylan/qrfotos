@@ -35,7 +35,7 @@
                                                 {{-- data-title="Project 01" --}}
                                                 data-description="{{ $vavlue->description }}">
 
-                                                <img src="{{ asset('images/1').'/'.$vavlue->name_image }}" class="img-fluid" alt="work-thumbnail">
+                                                <img src="{{ asset('images').'/'.Auth::user()->id.'/'.$vavlue->name_image }}" class="img-fluid" alt="work-thumbnail">
                                             </a>
                                             <i class="fa fa-trash position-absolute opc-0 text-danger" data-key="{{$vavlue->id}}" id="eliminar-imagen"></i>
                                         </div>

@@ -36,6 +36,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('lista', [CustomerController::class, 'lista'])->name('lista');
             Route::post('listar', [CustomerController::class, 'listar'])->name('listar');
             Route::post('guardar', [CustomerController::class, 'guardar'])->name('guardar');
+            Route::get('editar/{id}', [CustomerController::class, 'editar'])->name('editar');
+            Route::put('eliminar/{id}', [CustomerController::class, 'eliminar'])->name('eliminar');
             // Route::get('nuevo', [GalleryController::class, 'nuevo'])->name('nuevo');
         });
     });

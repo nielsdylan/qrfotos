@@ -27,6 +27,9 @@ class CustomerView {
                         $('#modal-cliente').modal('show');
                         $("#form-cliente")[0].reset();
                         $("#form-cliente").find('h5.modal-title').text('Nuevo Cliente');
+                        // $(selector).attr(attributeName);
+                        $('#form-cliente').find('[name="password"]').attr('required', 'true');
+                        $('#form-cliente').find('[name="rep_password"]').attr('required', 'true');
                     },
                     init: function(api, node, config) {
 
@@ -131,9 +134,35 @@ class CustomerView {
         });
         $('.editar').click((e) => {
             e.preventDefault();
-            let id = $(e.currentTarget).attr('data-id');
-            this.model.editar(id).then((respuesta) => {
+            let user_id = $(e.currentTarget).attr('data-id');
+            this.model.editar(user_id).then((respuesta) => {
                 console.log(respuesta);
+
+            }).always(() => {
+
+            }).fail(() => {
+
+            });
+        });
+        $('#tabla-data').on('click', 'a.editar',(e) => {
+            e.preventDefault();
+            let user_id = $(e.currentTarget).attr('data-id');
+            this.model.editar(user_id).then((respuesta) => {
+                if(respuesta.status=="success"){
+
+                    $('#modal-cliente').modal('show');
+                    $("#form-cliente")[0].reset();
+                    $("#form-cliente").find('h5.modal-title').text('Esitar Cliente');
+
+
+                    $('#form-cliente').find('[name="numero_documento"]').val(respuesta.cliente.numero_documento)
+                    $('#form-cliente').find('[name="apellidos"]').val(respuesta.cliente.apellidos)
+                    $('#form-cliente').find('[name="nombres"]').val(respuesta.cliente.nombres)
+                    $('#form-cliente').find('[name="email"]').val(respuesta.cliente.email)
+
+                    $('#form-cliente').find('[name="password"]').removeAttr('required');
+                    $('#form-cliente').find('[name="rep_password"]').removeAttr('required');
+                }
 
             }).always(() => {
 

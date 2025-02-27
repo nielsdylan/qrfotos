@@ -22,10 +22,10 @@ class CustomerController extends Controller
             ->addColumn('accion', function ($data) {
                 return
                 '<div class="flex align-items-center list-user-action" >
-                    <a href="#" class="btn btn-outline-info btn-icon btn-sm ver"  data-id="' . $data->id . '" ><i class="fa fa-eye"></i></a>
-                    <a href="#" class="btn btn-outline-warning btn-icon btn-sm editar"  data-id="' . $data->id . '" ><i class="bx bx-edit-alt"></i>
+                    <a href="#" class="btn btn-outline-info btn-icon btn-sm ver"  data-id="' . $data->user_id . '" ><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-outline-warning btn-icon btn-sm editar"  data-id="' . $data->user_id . '" ><i class="bx bx-edit-alt"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-danger btn-icon btn-sm eliminar"  data-id="' . $data->id . '" ><i class="fa fa-trash"></i>
+                    <a href="#" class="btn btn-outline-danger btn-icon btn-sm eliminar"  data-id="' . $data->user_id . '" ><i class="fa fa-trash"></i>
                     </a>
 
                 </div>';
@@ -37,7 +37,10 @@ class CustomerController extends Controller
         ]);
         $user->name = $request->apellidos . ' ' . $request->nombres;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password) ;
+        if($request->password){
+            $user->password = Hash::make($request->password) ;
+        }
+
         $user->save();
 
         $customer = Customer::firstOrNew(
@@ -56,5 +59,29 @@ class CustomerController extends Controller
             "mensaje"=>"Se registor con éxito",
             "icon"=>"success",
         ],200);
+    }
+    public function editar($id) {
+        $user = User::find($id);
+        if(!$user){
+            return response()->json([
+                // "data"=>$id,
+                "status"=>"error",
+            ],200);
+        }
+        $customer = Customer::where('user_id',$user->id)->first();
+        if(!$customer){
+            return response()->json([
+                // "data"=>$id,
+                "status"=>"error",
+            ],200);
+        }
+        return response()->json([
+            "usuario"=>$user,
+            "cliente"=>$customer,
+            "status"=>"success",
+        ],200);
+    }
+    public function eliminar($id) {
+
     }
 }

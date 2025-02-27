@@ -14,19 +14,19 @@ class CustomerModel {
             data: data
         });
     }
-    editar = (data) =>{
+    editar = (user_id) =>{
         return $.ajax({
-            url: route('administrador.clientes.guardar'),
-            type: 'POST',
+            url: route('administrador.clientes.editar',{id:user_id}),
+            type: 'GET',
             dataType: "JSON",
             // processData: false,
             // contentType: false,
-            data: data
+            data: {_token: this.token}
         });
     }
     eliminar = (id) =>{
         return $.ajax({
-            url: route('galeria.eliminar-fotos'),
+            url: route('administrador.clientes.eliminar',{id:user_id}),
             type: 'PUT',
             dataType: "JSON",
             // processData: false,

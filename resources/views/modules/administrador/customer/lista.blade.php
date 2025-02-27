@@ -71,6 +71,7 @@
                             aria-label="Close"
                         ></button>
                     </div>
+                    <input type="hidden" name="" value="0">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
